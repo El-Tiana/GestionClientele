@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search Client{% endblock %}
+
+{% block body %}
+    <h1>Search Client</h1>
+
+    <form action="{{ path('client_search') }}" method="POST">
+        <input type="text" name="numero" id="numero" placeholder="numero">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <a href="{{ path('client_index') }}">back to list</a>
+{% endblock %}
