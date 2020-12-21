@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter doléance{% endblock %}
+
+{% block body %}
+    <h1>Ajouter doléance</h1>
+
+    <div><form action="{{ path('doleance_add') }}" method="POST">
+        <div><label for="numero">Numero du client :</label>
+        <input type="text" name="numero" id="numero" placeholder="numero"></div>
+        <div><label for="plainte">Remarques/Plaintes :</label>
+        <textarea type="text" name="plainte" id="plainte" placeholder="" height="4"></textarea></div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form></div>
+
+    <a href="{{ path('client_index') }}">back to list</a>
+{% endblock %}

@@ -49,11 +49,18 @@ class DoleanceController extends AbstractController
     }
 
     /**
-     * @Route("/goSearch", name="client_gosearch")
+     * @Route("/goAdd", name="doleance_goadd")
      */
-    public function goSearch()
+    public function goAdd()
     {
-        return $this->render('client/search.html.twig');
+        return $this->render('doleance/add.html.twig');
+    }
+    /**
+     * @Route("/add", name="doleance_add", methods={"POST"})
+     */
+    public function add():Response
+    {
+        return $this->render('doleance/add.html.twig');
     }
 
     /**

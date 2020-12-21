@@ -20,8 +20,10 @@ class ClientController extends AbstractController
      */
     public function index(ClientRepository $clientRepository): Response
     {
+        $count = $clientRepository->countByNumber('0340000001');
         return $this->render('client/index.html.twig', [
             'clients' => $clientRepository->findAll(),
+            'count' => $count,
         ]);
     }
 
@@ -51,7 +53,7 @@ class ClientController extends AbstractController
     /**
      * @Route("/goSearch", name="client_gosearch")
      */
-    public function goSearch(): Response
+    public function goSearch()
     {
         return $this->render('client/search.html.twig');
     }

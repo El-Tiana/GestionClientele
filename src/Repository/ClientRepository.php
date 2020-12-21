@@ -47,4 +47,14 @@ class ClientRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function countByNumber($numero)
+    {
+        return $this->createQueryBuilder('a')
+            ->select('count(a.nom)')
+            ->andWhere('a.numero = :num')
+            ->setParameter('num', $numero)
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+    }
 }
